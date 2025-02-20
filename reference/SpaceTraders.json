@@ -10,7 +10,8 @@
     },
     "license": {
       "name": "No Permission",
-      "url": "https://choosealicense.com/no-permission/"
+      "url": "https://choosealicense.com/no-permission/",
+      "identifier": "No-License"
     }
   },
   "security": [
@@ -3896,6 +3897,9 @@
     "/market/supply-chain": {
       "get": {
         "summary": "Get Supply Chain",
+        "tags": [
+          "Data"
+        ],
         "description": "Describes which import and exports map to each other.",
         "parameters": [],
         "operationId": "get-supply-chain",
@@ -3925,45 +3929,34 @@
                       "type": "object",
                       "properties": {
                         "exportToImportMap": {
-                          "type": "object",
-                          "properties": {
-                            "string": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        },
-                        "required": [
-                          "exportToImportMap"
-                        ]
-                      }
-                    },
-                    "required": [
-                      "data"
-                    ]
-                  }
-                },
-                "application/xml": {
-                  "schema": {
-                    "type": "object",
-                    "properties": {}
-                  }
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "exportToImportMap"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ]
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
                 }
               }
             }
-          },
-          "tags": [
-            "Data"
-          ],
-          "security": [
-            {
-              "AgentToken": []
-            }
-          ]
+          }
         },
-        "parameters": []
+        "security": [
+          {
+            "AgentToken": []
+          }
+        ]
       }
     }
   }
+}
